@@ -1,18 +1,32 @@
-size_t	ft_strlcat (char *dest, const char *src, size_t size)
-{
-	size_t	destlen;
-	size_t	i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/11 12:35:27 by arblanco          #+#    #+#             */
+/*   Updated: 2023/01/14 14:02:18 by arblanco         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	destlen = ft_strlen(dest);	
-	if (size <= destlen) //duda: que significa esto?
-		return (size + destlen);
+#include "libft.h"
+
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	j;
+
 	i = 0;
-	while (src[i] != '\0' && destlen + 1 < size) //duda: la segunda condicion porque es asi en vez de destlen < size - 1 ?
-	{
-		dest[destlen] = src[i];
-		destlen++;
+	j = 0;
+	while (dest[i] != '\0' && i < size)
 		i++;
+	while (src[j] && (i + j + 1) < size)
+	{
+		dest[i + j] = src[j];
+		j++;
 	}
-	dest[destlen] = '\0';
-	return (ft_strlen(dest) + ft_strlen(&src[i])); // duda: esto porque va asi?
+	if (i < size)
+		dest[i + j] = '\0';
+	return (i + ft_strlen(src));
 }
