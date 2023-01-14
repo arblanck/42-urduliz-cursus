@@ -6,7 +6,7 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 10:50:37 by arblanco          #+#    #+#             */
-/*   Updated: 2022/12/03 11:06:20 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/01/14 10:51:28 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if (ft_islower(c) == 1)
+	if ('a' <= c && c <= 'z')
 		c = c - 32;
 	return (c);
 }
