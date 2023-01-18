@@ -6,7 +6,7 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 12:35:27 by arblanco          #+#    #+#             */
-/*   Updated: 2023/01/14 14:02:18 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/01/18 17:03:24 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	while (dest[i] != '\0' && i < size)
+	while (dest[i] && i < size)
 		i++;
 	while (src[j] && (i + j + 1) < size)
 	{
