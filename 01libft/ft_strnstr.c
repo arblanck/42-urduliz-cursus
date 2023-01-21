@@ -6,7 +6,7 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:29:18 by arblanco          #+#    #+#             */
-/*   Updated: 2023/01/21 14:16:08 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/01/21 14:29:04 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
