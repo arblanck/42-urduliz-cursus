@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Description: 
+ * Computes the length of the string
+ * Param. #1: The string to calculate
+ * Return Values: The number of characters that precede 
+ * the terminating NULL character */
+
 #include "libft.h"
 
 size_t	ft_strlen(const char *str)
@@ -17,7 +23,7 @@ size_t	ft_strlen(const char *str)
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 		i++;
 	return (i);
 }

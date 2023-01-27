@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Description: 
+ * Copies up to size -1 characters from the NULL-terminated string src to dest,
+ *  NULL-terminating the result
+ *  Param. #1: Destination array 
+ *  Param. #2: String to be copied
+ *  Param. #3:  Number of characters to be copied from src
+ *  Return Value: Total length of the string to create (length of src) */
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
@@ -17,9 +25,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	i;
 
 	i = 0;
-	if (!size)
+	if (size == '\0')
 		return (ft_strlen(src));
-	while (src[i] && i < size - 1)
+	while (src[i] != '\0' && i < size - 1)
 	{
 		dest[i] = src[i];
 		i++;
