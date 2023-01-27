@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Description: 
+ * Checks for an ASCII character [0 – 127]
+ * Param. #1: The character to test
+ * Return Value: returns zero if the character tests false 
+ * and returns non-zero if the character tests true */
+
 #include "libft.h"
 
 int	ft_isascii(int c)

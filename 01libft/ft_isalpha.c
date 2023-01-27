@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Description: 
+ * Check for a alpabetic character [A(65) - Z(90) or a(97) - z(122)]
+ * Param. #1: The character to test
+ * Return Value: returns zero if the character tests false 
+ * and returns non-zero if the character tests true */
+
 #include "libft.h"
 
 int	ft_isalpha(int c)

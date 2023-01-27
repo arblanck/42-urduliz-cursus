@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Description: 
+ * Checks for any printable character [32 – 126]
+ * Param. #1: The character to test
+ * Return Value: returns zero if the character tests false 
+ * and returns non-zero if the character tests true */
+
 #include "libft.h"
 
 int	ft_isprint(int c)

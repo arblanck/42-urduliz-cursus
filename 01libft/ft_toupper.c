@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Description: 
+ * Converts a lower-case letter to the corresponding upper-case letter (-32)
+ * Param. #1: The character to convert
+ * Return Value: Returns uppercase equivalent */
+
 #include "libft.h"
 
 int	ft_toupper(int c)

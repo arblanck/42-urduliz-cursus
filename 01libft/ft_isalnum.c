@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Description: 
+ * Check for an alphanumeric character; 
+ * it is equivalent to [ft_isalpha] or [ft_isdigit]
+ * Param. #1: The character to test
+ * Return Value: returns zero if the character tests false 
+ * and returns non-zero if the character tests true */
+
 #include "libft.h"
 
 int	ft_isalnum(int c)

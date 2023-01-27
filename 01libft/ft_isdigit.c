@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Description: 
+ * Check for a decimal digit character [0(48) - 9(57)]
+ * Param. #1:The number to test
+ * Return Value: returns zero if the character tests false 
+ * and returns non-zero if the character tests true */
+
 #include "libft.h"
 
 int	ft_isdigit(int c)
