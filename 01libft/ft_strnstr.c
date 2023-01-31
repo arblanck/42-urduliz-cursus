@@ -6,7 +6,7 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:29:18 by arblanco          #+#    #+#             */
-/*   Updated: 2023/01/31 10:47:21 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/01/31 11:38:59 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
 	i = 0;
 	l = ft_strlen(needle);
 	if (*needle == '\0')
-	{
 		return ((char *)haystack);
-	}
 	while (haystack[i] != '\0' && i + l <= size)
 	{
 		if (ft_strncmp((&haystack[i]), needle, l) == '\0')
-		{
 			return ((char *)&haystack[i]);
-		}
 		i++;
 	}
 	return (0);

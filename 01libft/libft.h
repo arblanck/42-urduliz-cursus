@@ -6,7 +6,7 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 13:03:38 by arblanco          #+#    #+#             */
-/*   Updated: 2023/01/31 11:01:50 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/01/31 11:27:59 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int		ft_strncmp(const char *s1, const char *s2, size_t size);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t size);
 void	*ft_memset(void *str, int c, size_t size);
 void	ft_bzero(void *str, size_t size);
+void	*ft_memcpy(void *dest, const void *strc, size_t size);
 
 #endif
