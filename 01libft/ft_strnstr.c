@@ -6,13 +6,13 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:29:18 by arblanco          #+#    #+#             */
-/*   Updated: 2023/01/21 14:29:04 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:47:21 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Description: 
  * Locates the first occurrence of the NULL-terminated string needle in 
- * the string haystack, where not more than len characters are searched. 
+ * the string haystack, where not more than size characters are searched. 
  * Characters that appear after a `\0' character are not searched.  
  * Param. #1: String to be scanned
  * Param. #2: The small string to be searched in 'haystack' string
@@ -23,7 +23,7 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
 {
 	size_t	i;
 	size_t	l;
@@ -34,7 +34,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		return ((char *)haystack);
 	}
-	while (haystack[i] != '\0' && i + l <= len)
+	while (haystack[i] != '\0' && i + l <= size)
 	{
 		if (ft_strncmp((&haystack[i]), needle, l) == '\0')
 		{
