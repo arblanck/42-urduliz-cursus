@@ -15,7 +15,7 @@
  * The two strings may overlap; 
  * the copy is always done in a non-destructive manner. 
  * Param. #1: Memory area dest 
- * Param. #2: Memory area src 
+ * Param. #2: Memory area strc 
  * Param. #3: The number of bytes 
  * Return Value: A pointer to the memory area dest */
 
