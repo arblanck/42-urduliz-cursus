@@ -6,7 +6,7 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 13:03:38 by arblanco          #+#    #+#             */
-/*   Updated: 2023/01/31 13:27:43 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/01/31 14:15:08 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void	ft_bzero(void *str, size_t size);
 void	*ft_memcpy(void *dest, const void *strc, size_t size);
 void	*ft_memmove(void *dest, const void *strc, size_t size);
 void	*ft_memchr(const void *str, int c, size_t size);
+int		ft_memcmp(const void *s1, const void *s2, size_t size);
 
 #endif
