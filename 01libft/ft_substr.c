@@ -6,9 +6,19 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 18:42:51 by arblanco          #+#    #+#             */
-/*   Updated: 2023/02/11 18:18:37 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/02/11 18:46:13 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Descripcion: 
+ * Reserva (con malloc(3)) y devuelve una substring de la string ’s’. 
+ * La substring empieza desde el índice ’start’ 
+ * y tiene una longitud máxima ’len’. 
+ * Param. #1: La string desde la que crear la substring 
+ * Param. #2: El índice del caracter en ’s’ desde el que empezar la substring 
+ * Param. #3: La longitud máxima de la substring 
+ * Valor devuelto: La substring resultante. 
+ * NULL si falla la reserva de memoria. */
 
 #include "libft.h"
 #include <stdlib.h>
