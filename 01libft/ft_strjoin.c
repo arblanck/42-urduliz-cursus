@@ -6,16 +6,16 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 18:51:02 by arblanco          #+#    #+#             */
-/*   Updated: 2023/02/11 19:21:39 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/02/11 20:00:34 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Descripcion: 
- * Reserva (con malloc(3)) y devuelve una nueva string, formada por 
- * la concatenación de ’s1’ y ’s2’. 
- * Param. #1: La primera string 
- * Param. #2: La string a añadir a ’s1’ 
- * Valor devuelto: La nueva string. NULL si falla la reserva de memoria. */
+/* Description: 
+ * Allocates (with malloc(3)) and returns a new string, which is the result 
+ * of the concatenation of ’s1’ and ’s2’. 
+ * Param. #1: The prefix string 
+ * Param. #2: The suffix string 
+ * Return Value: The new string. NULL if the allocation fails. */
 
 #include "libft.h"
 #include <stdlib.h>
