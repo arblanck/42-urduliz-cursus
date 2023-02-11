@@ -6,7 +6,7 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 18:10:34 by arblanco          #+#    #+#             */
-/*   Updated: 2023/02/06 18:21:30 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:31:27 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_calloc(size_t number, size_t size)
 
 	poitr = malloc(number * size);
 	if (poitr == 0)
-		return (poitr);
+		return (0);
 	ft_bzero(poitr, number * size);
 	return (poitr);
 }
