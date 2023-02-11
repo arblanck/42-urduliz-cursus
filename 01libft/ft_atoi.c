@@ -6,7 +6,7 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 14:29:13 by arblanco          #+#    #+#             */
-/*   Updated: 2023/01/31 14:55:38 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:07:03 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	number;
+	size_t	i;
+	size_t	sign;
+	size_t	number;
 
 	i = 0;
 	sign = 1;
