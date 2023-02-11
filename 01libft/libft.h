@@ -6,7 +6,7 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 13:03:38 by arblanco          #+#    #+#             */
-/*   Updated: 2023/02/11 19:08:32 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/02/11 20:29:54 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ char	*ft_strdup(const char *str);
 void	*ft_calloc(size_t number, size_t size);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif
