@@ -6,38 +6,27 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 11:21:34 by arblanco          #+#    #+#             */
-/*   Updated: 2023/02/12 14:06:39 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/03/12 11:27:05 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static char	**ft_malloc_error(char **arr, int idx)
+static size_t	ft_word_len(char const *s, char c, int pos)
 {
-	int	i;
-
-	i = -1;
-	while (++i < idx)
-		free(arr[i]);
-	free(arr);
-	return (NULL);
-}
-
-static size_t	ft_word_len(char const *s, char c)
-{
-	size_t	len;
+	int	len;
 
 	len = 0;
-	while (*s && *s != c)
+	while (s[pos] != c && s[pos] != '\0')
 	{
 		len++;
-		s++;
+		pos++;
 	}
 	return (len);
 }
 
-static size_t	ft_num_words(char const *s, char c)
+static size_t	ft_num_word(char const *s, char c)
 {
 	size_t	i;
 	size_t	words;
@@ -58,39 +47,45 @@ static size_t	ft_num_words(char const *s, char c)
 	return (words);
 }
 
+static char	**err_free(char **list)
+{
+	int	i;
+
+	i = 0;
+	while (list[i])
+	{
+		free(list[i]);
+		i++;
+	}
+	free(list);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	size_t	nwords;
-	char	**split;
-	size_t	index;
-	size_t	i;
+	int		i;
+	int		j;
+	int		k;
+	int		count;
+	char	**result;
 
-	nwords = ft_num_words(s, c);
-	split = (char **)malloc(sizeof(char *) * (nwords + 1));
-	if (split == 0)
-		return (0);
-	index = 0;
+	count = ft_num_word(s, c);
+	result = (char **)malloc(sizeof(char *) * (count + 1));
+	if (!result)
+		return (NULL);
 	i = 0;
-	while (s[i] != 0)
+	k = 0;
+	while (i < count)
 	{
-		if (s[i] != c)
-			split[index] = (char *)malloc(sizeof(char) * (ft_word_len(s, c) + 1));
-			if (!split[index])
-				return(ft_malloc_error(split, index));
-
-
-
-	while (++i < nwords)
-	{
-		while (s[++k] && s[k] == c)
-			continue ;
-		start = k;
-		while (s[k] && s[k] != c)
+		while (s[k] == c)
 			k++;
-		split[i] = ft_substr(s, start, k - start);
-		if (!split[i])
-			return (ft_malloc_error(split, i));
+		j = ft_word_len(s, c, k);
+		result[i] = ft_substr(s, k, j);
+		if (result[i] == NULL)
+			return (err_free((char **)result));
+		k = k + j;
+		i++;
 	}
-	split[i] = NULL;
-	return (split);
+	result[i] = 0;
+	return (result);
 }
