@@ -6,24 +6,33 @@
 /*   By: arblanco <arblanco@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 11:21:34 by arblanco          #+#    #+#             */
-/*   Updated: 2023/03/12 11:27:05 by arblanco         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:14:30 by arblanco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Description: 
+ * Allocates (with malloc(3)) and returns an array of strings obtained by 
+ * splitting ’s’ using the character ’c’ as a delimiter. The array must be 
+ * ended by a NULL pointer. 
+ * Param. #1: The string to be split. 
+ * Param. #2: The delimiter character. 
+ * Return Value: The array of new strings resulting from the split. 
+ * NULL if the allocation fails. */
 
 #include "libft.h"
 #include <stdlib.h>
 
 static size_t	ft_word_len(char const *s, char c, int pos)
 {
-	int	len;
+	size_t	len_s;
 
-	len = 0;
+	len_s = 0;
 	while (s[pos] != c && s[pos] != '\0')
 	{
-		len++;
+		len_s++;
 		pos++;
 	}
-	return (len);
+	return (len_s);
 }
 
 static size_t	ft_num_word(char const *s, char c)
@@ -47,9 +56,9 @@ static size_t	ft_num_word(char const *s, char c)
 	return (words);
 }
 
-static char	**err_free(char **list)
+static char	**ft_err_free(char **list)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (list[i])
@@ -58,34 +67,34 @@ static char	**err_free(char **list)
 		i++;
 	}
 	free(list);
-	return (NULL);
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		k;
-	int		count;
-	char	**result;
+	size_t	i;
+	size_t	j;
+	size_t	len;
+	size_t	num;
+	char	**output;
 
-	count = ft_num_word(s, c);
-	result = (char **)malloc(sizeof(char *) * (count + 1));
-	if (!result)
-		return (NULL);
+	num = ft_num_word(s, c);
+	output = (char **)malloc(sizeof(char *) * (num + 1));
+	if (output == 0)
+		return (0);
 	i = 0;
-	k = 0;
-	while (i < count)
+	j = 0;
+	while (i < num)
 	{
-		while (s[k] == c)
-			k++;
-		j = ft_word_len(s, c, k);
-		result[i] = ft_substr(s, k, j);
-		if (result[i] == NULL)
-			return (err_free((char **)result));
-		k = k + j;
+		while (s[j] == c)
+			j++;
+		len = ft_word_len(s, c, j);
+		output[i] = ft_substr(s, j, len);
+		if (output[i] == 0)
+			return (ft_err_free((char **)output));
+		j = j + len;
 		i++;
 	}
-	result[i] = 0;
-	return (result);
+	output[i] = 0;
+	return (output);
 }
